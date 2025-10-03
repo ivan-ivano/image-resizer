@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зміна розміру зображення</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Зміна розміру зображення</h1>
+
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/*">
+            <label for="fileInput" class="file-label">
+                📁 Натисніть або перетягніть файл
+            </label>
+            <div class="file-info" id="fileInfo"></div>
+        </div>
+
+        <form id="resizeForm">
+            <div class="dimension-inputs">
+                <div class="input-group">
+                    <label for="width">Ширина (px)</label>
+                    <input type="number" id="width" name="width" value="800" min="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="height">Висота (px)</label>
+                    <input type="number" id="height" name="height" value="600" min="1" required>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>Змінити розмір</button>
+        </form>
+
+        <div class="loading" id="loading">⏳ Обробка зображення...</div>
+
+        <div class="preview" id="preview">
+            <h3>Результат:</h3>
+            <img id="resultImg" src="" alt="Resized image">
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
