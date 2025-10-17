@@ -6,7 +6,6 @@ import io
 class ImageService:
     @staticmethod
     async def resize(file: UploadFile, width: int, height: int) -> bytes:
-        """Змінює розмір зображення"""
         contents = await file.read()
         image = Image.open(io.BytesIO(contents))
 
