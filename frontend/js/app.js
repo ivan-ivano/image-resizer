@@ -9,7 +9,7 @@ const loading = document.getElementById('loading');
 let selectedFile = null;
 
 // URL backend API
-const API_URL = 'http://localhost:5555';
+const API_URL = 'http://localhost:8080';
 
 // Drag and drop
 uploadArea.addEventListener('dragover', (e) => {
