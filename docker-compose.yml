@@ -3,7 +3,7 @@ services:
     build: ./backend
     container_name: image-resizer-backend
     ports:
-      - "8000:8080"
+      - "5555:8080"
     restart: unless-stopped
 
   frontend:
