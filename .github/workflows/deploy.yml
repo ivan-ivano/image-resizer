@@ -11,31 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1️⃣ Клонування репозиторію
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2️⃣ Встановлення Docker Compose
     - name: Set up Docker Compose
       run: |
         sudo apt-get update
         sudo apt-get install -y docker-compose
 
-    # 3️⃣ Збірка Docker-образів
     - name: Build Docker images
       run: |
         docker-compose build
 
-    # 4️⃣ Запуск контейнерів
     - name: Run containers
       run: |
         docker-compose up -d
         docker ps
 
-    # 5️⃣ Перевірка, чи працює бекенд
     - name: Test backend
       run: |
         sleep 5
-        curl -f http://localhost:5555 || (docker logs $(docker ps -q); exit 1)
+        curl -f http://localhost:3000 || (docker logs $(docker ps -q); exit 1)
 
       
