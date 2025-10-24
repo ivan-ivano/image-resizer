@@ -36,6 +36,6 @@ jobs:
     - name: Test backend
       run: |
         sleep 5
-        curl -f http://localhost:8000 || (docker logs $(docker ps -q); exit 1)
+        curl -f http://localhost:5555 || (docker logs $(docker ps -q); exit 1)
 
       
